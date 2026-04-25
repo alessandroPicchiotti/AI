@@ -1,4 +1,4 @@
 ChatGpt -> Custom https://chatgpt.com/gpts
 Diagrams: Flowcharts & Mindmaps
 
-Liguaggio e sito : https://mermaid.js.org/
+Liguaggio e sito : https://mermaid.js.org/  (diagrammi a partire dal codice)
