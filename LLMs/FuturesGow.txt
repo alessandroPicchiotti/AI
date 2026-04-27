@@ -6,3 +6,5 @@ passaggio a .NET 8+
 Eliminazione Telerik Grid e passaggio a DATASETS client side per le Lista grglia articoli infinity scrool
 Creare dashboard dalla tabelle delles statitiche (vedi Claude)
 Togliere da application ERP e caricare singelton (ninject o Dipendency injection in base al framework)
+
+Rivedere reportistica, creare report con l' AI???
