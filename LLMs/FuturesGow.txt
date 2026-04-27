@@ -13,4 +13,6 @@ Rivedere reportistica, creare report con l' AI???
 
 ----Vue.js-----?!?!?!? progressive framework
 
-
+ESEMPI APP VUE
+https://vuejsexamples.com/
+https://madewithvuejs.com
