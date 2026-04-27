@@ -8,3 +8,9 @@ Creare dashboard dalla tabelle delles statitiche (vedi Claude)
 Togliere da application ERP e caricare singelton (ninject o Dipendency injection in base al framework)
 
 Rivedere reportistica, creare report con l' AI???
+
+"benchmark" (o benchmarking) nel contesto di un framework informatico indica un test standardizzato
+
+----Vue.js-----?!?!?!? progressive framework
+
+
