@@ -16,3 +16,32 @@ Rivedere reportistica, creare report con l' AI???
 ESEMPI APP VUE
 https://vuejsexamples.com/
 https://madewithvuejs.com
+
+
+***********************************************************************
+*******************INFRASTRUTTURA**************************************
+***********************************************************************
+'architettura Multi-Entry in MVC 5, impostata per generare nomi di file predicibili.
+
+1. Struttura delle Cartelle
+Ti consiglio di creare una cartella dedicata al frontend alla radice del tuo progetto MVC (non dentro wwwroot o Scripts, per tenere i sorgenti separati dall'output).
+
+Plaintext
+/TuoProgettoMVC.sln
+/TuoProgettoMVC
+ ├── /Controllers
+ ├── /Views
+ ├── /Scripts
+ │    └── /vue-dist          <-- Vite compilerà qui i file finali
+ └── /FrontendApp            <-- La tua nuova "casa" per Vue
+      ├── /src
+      │    ├── /components   <-- Componenti condivisi (es. bottoni, modali)
+      │    └── /pages        <-- I tuoi Entry Point multipli
+      │         ├── /dashboard
+      │         │    ├── App.vue
+      │         │    └── main.js
+      │         └── /ordini
+      │              ├── App.vue
+      │              └── main.js
+      ├── package.json
+      └── vite.config.js
