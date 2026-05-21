@@ -1,1 +1,5 @@
+# Imposta la chiave API ufficiale o del tuo provider
+[System.Environment]::SetEnvironmentVariable('ANTHROPIC_API_KEY', 'sk-ant-tuachiave...', 'User')
 
+# Imposta il Base URL del proxy, gateway o endpoint custom
+[System.Environment]::SetEnvironmentVariable('ANTHROPIC_BASE_URL', 'https://il-tuo-endpoint-personalizzato.com/v1', 'User')
