@@ -1,4 +1,5 @@
 
+Utilizzare TASK AWAIT
 Convertire .aspx in cshtml per eliminare il view state
 Passaggio a Boostrap 5+ o Tailwind
 WebApi per Business (Magari creando una libreria Wrapper CORE)
