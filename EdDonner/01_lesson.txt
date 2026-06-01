@@ -1,0 +1,5 @@
+                                            CONTEXT ENGINNERING
+L'IMPORTANZA DEI AGENTS.md, CLAUDE.md e GIMINI.md
+
+1.  I LLM durante un chat i LLM posso consultare i vecchi token fino ad un certo punto rischiando di perdere il contesto.
+    Quindi diventano fondamentali i file.md
