@@ -1,5 +1,20 @@
                                             CONTEXT ENGINNERING
-L'IMPORTANZA DEI AGENTS.md, CLAUDE.md e GIMINI.md
+RIFERIMENTI: https://github.com/ed-donner
+  
+L'IMPORTANZA DEI FIEL MARKDOWN -> AGENTS.md, CLAUDE.md e GIMINI.md
 
-1.  I LLM durante un chat i LLM posso consultare i vecchi token fino ad un certo punto rischiando di perdere il contesto.
-    Quindi diventano fondamentali i file.md
+1.  I LLM durante un chat i LLM posso consultare i vecchi token fino ad un certo punto rischiando di perdere il contesto e quindi c'è un degrado dei     risultati che produce LLM .
+    Quindi diventano fondamentali i FILE.md
+2.  IMPORTANTE, il file deve essere nella cartella principale o RADICE (ROOT) del progetto.
+    a. Claude COde usa calude.md
+    b. Antigravity usa gemini.md
+3.  TIPLOGIE: 
+    2025
+    a.  Micro-manage: Apporve frequent reset
+    b.  Plan, execute, review, test
+    c.  SDD,: trust but verifiy
+    2026
+    a.  YOLO : Fai tutto da solo se conferme, poi verifico cosa hai fatto
+    b.  Ralf Loop: Interrogare LLM per capire se quello prodotto è il suo miglio risultato magari chiedendolo con un loop di 10 input
+    c.  Multi-agents:
+    
