@@ -18,3 +18,7 @@ L'IMPORTANZA DEI FIEL MARKDOWN -> AGENTS.md, CLAUDE.md e GIMINI.md
     b.  Ralf Loop: Interrogare LLM per capire se quello prodotto è il suo miglio risultato magari chiedendolo con un loop di 10 input
     c.  Multi-agents:
     
+IMPORTANTE:
+1.  Cursor ,copilot e codex ->  cartella root del progetto AGENTS.md
+2.  Antigravity: .agent/rules/strategy.md cartella root progetto
+3.  
