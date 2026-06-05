@@ -14,7 +14,7 @@
 
 ## Dettagli Tecnici (Technical Details)
 
-- Implementata con un backend in .NET 8 (Web API) per la gestione dello stato in memoria.
+- Implementata con un backend in .NET 8 (Web API RESTful basate sui controller) per la gestione dello stato in memoria. NO MINIMAL API.
 - Il backend deve essere creato in una sottodirectory chiamata `backend`.
 - L'interfaccia utente deve essere sviluppata come una Single Page Application (SPA) in Vue.js 3 (Composition API con TypeScript/Vite).
 - L'app Vue.js deve essere creata in una sottodirectory chiamata `frontend`.
