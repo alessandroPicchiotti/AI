@@ -1,0 +1,16 @@
+[Il tuo Progetto Multi-Progetto / Soluzione]
+├── .agent/                    <-- La cartella radice per l'IDE Antigravity
+│   ├── agents.md              <-- Definizione del Team e delle identità degli Agenti
+│   ├── rules/                 <-- Regole di codifica, standard tecnologici e vincoli
+│   │   ├── coding-standards.md
+│   │   └── tech-stack.md
+│   ├── workflows/             <-- Script, comandi e automazioni (/slash commands)
+│   │   └── build-pipeline.md
+│   └── skills/                <-- Abilità specifiche, comportamenti e cicli di rework
+│       └── ai-refactoring.md
+├── Backend/                   <-- Tua Web API (.NET 8 / .NET 10)
+├── Frontend/                  <-- Tuo Client Blazor WASM (MudBlazor)
+├── Shared/                    <-- Tua Class Library condivisa (.NET)
+├── docs/                      <-- Documentazione di progetto (PLAN.md, ecc.)
+├── scripts/                   <-- Script di avvio/arresto (Docker, ecc.)
+└── docker-compose.yml
