@@ -14,3 +14,15 @@
 ├── docs/                      <-- Documentazione di progetto (PLAN.md, ecc.)
 ├── scripts/                   <-- Script di avvio/arresto (Docker, ecc.)
 └── docker-compose.yml
+
+agents.md (o posizionato direttamente dentro .agent/):
+È il file principale di orchestrazione. Qui definisci chi sono i membri del "team virtuale" di AI (es. l'esperto di Backend .NET, l'esperto di UI MudBlazor) e assegni loro compiti o aree di competenza all'interno delle cartelle del tuo progetto.
+
+La cartella rules/:
+Ospita i file che descrivono i vincoli e le linee guida. Antigravity appiattisce e legge questi file per forzare l'AI a non fare over-engineering, a utilizzare solo idiomi moderni di .NET o a rispettare la tua palette di colori CSS/MudBlazor.
+
+La cartella workflows/:
+I file markdown posizionati qui vengono convertiti automaticamente da Antigravity in Slash Commands (comandi /). Se ad esempio crei un file chiamato startcycle.md, l'utente o la pipeline potrà digitare /startcycle nell'interfaccia dell'Agent Manager di Antigravity per attivare una determinata sequenza o un'automazione Docker.
+
+La cartella skills/:
+Contiene file markdown complessi che istruiscono gli agenti su come eseguire compiti avanzati e cicli iterativi di correzione degli errori (rework loops).
