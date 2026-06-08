@@ -1,0 +1,22 @@
+Site: https://opencode.ai/
+
+Terminal dopo npm install digitare opencode -> ok start Ai CLI
+
+Modelli da considerato : kimi (cinese + potente) 
+/init: crea l' agent.md
+/undo : annulla le modifiche fatte dall AI
+/redo : ripristina le modiche annullate
+
+File di configurazione per i modelli free, nome file:
+
+opencode.json
+
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "openrouter/z-ai/glm-4.5-air:free",
+  "provider": {
+    "openrouter": {
+      "options": { "apiKey": "sk-or-v1-........" }
+    }
+  }
+}
