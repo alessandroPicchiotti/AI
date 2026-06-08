@@ -16,3 +16,23 @@ TRUCCHI:
 
 #CALUDE.md
 @AGENTS.md
+
+
+SALVARE E RECUPERARE LE CONVERSAZIONI
+
+/rename
+/resume
+
+USCIRE premere due volte
+
+CTRL + C 
+CTRL + C
+
+TORNARE INDIETRO
+
+/rewind
+
+
+COMANDO YOLO Pericolosissimo:
+
+claude --dangerously-skip-permissions
