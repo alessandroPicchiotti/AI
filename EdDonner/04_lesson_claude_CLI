@@ -1,0 +1,6 @@
+CLAUDE CLI
+
+1.  /init Il primo comando analizza l'ambiente e prova a creare un MarkDown
+2.  /context analizza il contsto in cui stiamo interrgoando CLAUDE
+3.  /status : ci dice il modello proced id e tanto altro
+4.  /compact : compatta il contesto sintetizzando il prompt
