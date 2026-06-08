@@ -1,0 +1,6 @@
+SITE: https://ampcode.com/ 10$ al giorno con pubblivcita
+
+command vd codce: powershell -c "irm https://ampcode.com/install.ps1 | iex"
+
+
+
