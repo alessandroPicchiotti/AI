@@ -1,0 +1,4 @@
+Installazione dei plugin
+
+/plugin : c'è la sezione source, interessante quelle:
+code-review ,ralph-loop , feature-dev
