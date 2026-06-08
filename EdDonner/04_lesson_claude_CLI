@@ -4,3 +4,15 @@ CLAUDE CLI
 2.  /context analizza il contsto in cui stiamo interrgoando CLAUDE
 3.  /status : ci dice il modello proced id e tanto altro
 4.  /compact : compatta il contesto sintetizzando il prompt
+5.  /config , stats 
+
+TRUCCHI:
+
+##DETAILS PLAN
+@docs/PLAN.md
+
+--Se voglio mantenere il stesso fiel di copilot: AGENTS.md
+
+
+#CALUDE.md
+@AGENTS.md
