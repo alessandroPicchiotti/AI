@@ -1,4 +1,6 @@
 Installazione dei plugin
 
-/plugin : c'è la sezione source, interessante quelle:
-code-review ,ralph-loop , feature-dev
+commnd: /plugin : c'è la sezione source, interessante quelle:
+code-review ,ralph-loop , feature-dev, front-end e semple-code
+
+https://github.com/anthropics/claude-plugins-official/tree/main/plugins
