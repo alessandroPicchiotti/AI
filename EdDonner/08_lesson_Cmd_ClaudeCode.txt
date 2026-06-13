@@ -1,0 +1,7 @@
+Context : carattere @ o aprile il file e controllare sotto la chat
+
+PULIZIA:
+  New Chat
+  /clear
+  /compact
+  premere 2 volte "esc" della tastiera
