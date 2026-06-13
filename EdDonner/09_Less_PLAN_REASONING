@@ -1,3 +1,14 @@
-Prima di procedere CLAUDE può ragionare e pianificare:
+#Prima di procedere CLAUDE può ragionare e pianificare:
 
+#PLAN
 ALT + M per 2 volte --> PLAN
+
+
+##REASONING
+
+Quando si aggiunge la parole ****think****  -> pensa Claude perte con il ragionamento.....
+
+ESEMPIO DI PROMP:
+
+> Implementa un sistema di commenti all'interno dell'applicazione, in cui gli utenti possano autenticarsi e poi commentare i post del blog. 
+"Rifletti" attentamente su questa implementazione, inclusi lo schema del database, i servizi di autenticazione, la moderazione e gli aggiornamenti in tempo reale.
