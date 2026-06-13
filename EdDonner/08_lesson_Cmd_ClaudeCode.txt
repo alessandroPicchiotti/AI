@@ -1,7 +1,15 @@
 Context : carattere @ o aprile il file e controllare sotto la chat
 
+IMPORTANTE: un token sono 3 parole crica, se non si riduce la chat veniamo esposti ad un consumo eccessivo di token in più la qualità del risultato tende a degradarsi.
+
+
 PULIZIA:
-  New Chat
+  /exit   e poi comando  "claude" per rientrare
   /clear
   /compact
   premere 2 volte "esc" della tastiera
+
+--Se si vuole riprendere le vecchie conversazioni
+  /resume   Ti presenta la lista con tutte el conversazioni che puoi rioprendere con tutto il suo contesto!!!!
+
+
