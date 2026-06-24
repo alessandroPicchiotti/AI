@@ -1,1 +1,61 @@
+1. CLAUDE.md (Linee guida globali di migrazione)
+
+  # Progetto: Migrazione a .NET 8
+  
+  ## Stack Tecnologico
+  - Target Framework: .NET 8.0
+  - C# Versione: C# 12
+  - ORM: Entity Framework Core 8 (sostituisce EF6)
+  
+  ## Regole di Codifica per la Migrazione
+  - **Iniezione di Dipendenze**: Sostituire Unity/Ninject con `Microsoft.Extensions.DependencyInjection`.
+  - **Configurazioni**: Convertire i file `web.config` / `app.config` nel file `appsettings.json`.
+  - **API Controller**: Usare `Microsoft.AspNetCore.Mvc.ControllerBase` invece di `System.Web.Http.ApiController`.
+  - **Asincronia**: Forzare l'uso di `async/await` per tutte le chiamate I/O e database.
+  
+  ## Comandi Utili
+  - Verifica compatibilità: `dotnet-upgrade-assistant analyze .`
+  - Esegui migrazione guidata: `dotnet-upgrade-assistant upgrade .`
+  - Build del progetto: `dotnet build`
+
+2. SKILLS.md (Istruzioni procedurali on-demand)
+
+  # Skill: Conversione Controller da .NET Framework a .NET 8
+  
+  ## Quando usare questa skill
+  Usa questa procedura quando l'utente ti chiede di fare il refactoring di un vecchio controller Web API o MVC.
+  
+  ## Procedura di Refactoring
+  1. **Aggiorna i Namespace**:
+     - Rimuovi `System.Web.Http` e `System.Web.Mvc`.
+     - Aggiungi `Microsoft.AspNetCore.Mvc`.
+  2. **Modifica la Classe**:
+     - Cambia l'ereditarietà in `: ControllerBase`.
+     - Aggiungi l'attributo `[ApiController]` e `[Route("api/[controller]")]`.
+  3. **Aggiorna i Valori di Ritorno**:
+     - Sostituisci `IHttpActionResult` con `IActionResult` o `ActionResult<T>`.
+     - Converti `Request.CreateResponse(HttpStatusCode.OK, data)` in `Ok(data)`.
+  4. **Converti il Context**:
+     - Sostituisci `HttpContext.Current` con l'iniezione di `IHttpContextAccessor`.
+
+3. plan.md (Roadmap e stato di avanzamento)
+  # Piano di Migrazione: App Fatturazione a .NET 8
+
+  ## Fase 1: Analisi e Preparazione [100%]
+  - [x] Eseguire .NET Upgrade Assistant per report di compatibilità
+  - [x] Aggiornare i progetti di libreria di classi a .NET Standard 2.0
+  
+  ## Fase 2: Refactoring Core e Dati [50%]
+  - [x] Migrare i modelli di dati da EF6 a EF Core 8
+  - [ ] Convertire la logica di business per usare il nuovo sistema di configurazione JSON
+  - [ ] Sostituire il vecchio sistema di logging con `ILogger`
+  
+  ## Fase 3: Refactoring API [0%]
+  - [ ] Convertire `AutenticazioneController` (Web API vecchia)
+  - [ ] Convertire `FattureController`
+  - [ ] Configurare il middleware di autenticazione in `Program.cs` (.NET 8)
+  
+  ## Fase 4: Test e Validazione [0%]
+  - [ ] Configurare i test unitari con xUnit su .NET 8
+  - [ ] Test di integrazione end-to-end
 
