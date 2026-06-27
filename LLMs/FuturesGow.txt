@@ -15,6 +15,11 @@ Creare un dashboard (https://dribbble.com/search/dashboard)
 
 ----Vue.js-----?!?!?!? progressive framework
 
+
+SKILLS: Gow\.claude\commands
+  ---------------------migrating-aspnet-framework-to-core.md
+  ---------------------side-by-side.md
+
 ESEMPI APP VUE
 https://vuejsexamples.com/
 https://madewithvuejs.com
