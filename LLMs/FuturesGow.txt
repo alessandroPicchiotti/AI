@@ -3,12 +3,13 @@ Utilizzare TASK AWAIT
 Convertire .aspx in cshtml per eliminare il view state
 Passaggio a Boostrap 5+ o Tailwind
 WebApi per Business (Magari creando una libreria Wrapper CORE)
-passaggio a .NET 8+
+WebApi per Business File (Magari creando una libreria Wrapper CORE)
+passaggio a .NET 8+ o 10+
 Eliminazione Telerik Grid e passaggio a DATASETS client side per le Lista grglia articoli infinity scrool
 Creare dashboard dalla tabelle delles statitiche (vedi Claude)
 Togliere da application ERP e caricare singelton (ninject o Dipendency injection in base al framework)
-
 Rivedere reportistica, creare report con l' AI???
+Creare un dashboard (cdi sito)
 
 "benchmark" (o benchmarking) nel contesto di un framework informatico indica un test standardizzato
 
