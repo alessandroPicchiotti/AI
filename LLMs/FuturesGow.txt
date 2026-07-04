@@ -9,7 +9,11 @@ Eliminazione Telerik Grid e passaggio a DATASETS client side per le Lista grglia
 Creare dashboard dalla tabelle delles statitiche (vedi Claude)
 Togliere da application ERP e caricare singelton (ninject o Dipendency injection in base al framework)
 Rivedere reportistica, creare report con l' AI???
+
+LAYOUT
 Creare un dashboard (https://dribbble.com/search/dashboard)
+https://gemini.google.com/share/edd52302ed69
+
 
 "benchmark" (o benchmarking) nel contesto di un framework informatico indica un test standardizzato
 
