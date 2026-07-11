@@ -1,1 +1,91 @@
 
+# Claude Design - Design System
+
+**1)**
+
+```bash
+I'm starting a brand new project from scratch and I need your help to build a complete, consistent design system that I can use across everything
+ - a pitch deck, a logo concept, brand guidelines, a website, and a mobile app.
+Here's the brand context:
+
+Name: [YOUR BRAND NAME]
+Industry: [e.g. fintech / health / education / SaaS]
+Target audience: [e.g. young professionals, small business owners]
+Brand personality: [e.g. bold and modern / clean and trustworthy / playful and energetic]
+Mood: [e.g. dark and premium / light and minimal / vibrant and expressive]
+
+Please build a full design system that includes:
+
+A color palette - primary, secondary, accent, neutrals, and semantic colors (success, error, warning)
+Typography - headline font, body font, and a scale for sizes (avoid generic fonts like Inter or Roboto - choose something distinctive)
+Spacing and layout rules - grid, padding, margin scale
+Core UI components - buttons, cards, input fields, navigation
+Visual style direction - background treatment, shadows, border radius, iconography style
+Brand voice summary - 3 words that describe the visual identity
+
+Make the design system opinionated and distinctive. Avoid generic AI aesthetics - no purple gradients, no flat corporate looks. 
+Commit to a clear visual direction that feels designed with intention.
+```
+
+2)
+
+```bash
+Take the design system we just built and run with it. The brand is called [BRAND_NAME].
+
+Figure the rest out yourself based on the design system, the name, and what would make commercial sense. Make decisions — don't list options.
+
+Think through:
+- What product or service this brand sells (be specific — not "a platform," but the actual thing someone pays for)
+- Who the customer is — one primary persona, named, with a real job and a real problem
+- What the mission is — why this exists beyond making money
+- What the core offer is — the headline product, the price point, the format it's sold in
+- What category it's disrupting and what it's replacing in people's lives
+- What the unfair advantage is — why this brand wins, not just exists
+
+Then turn all of it into a single brand concept spec as a Markdown file called brand-concept.md. Structure:
+
+# [Brand Name] — Brand Concept Spec
+
+## The One-Liner
+One sentence. What the brand is and who it's for.
+
+## The Product
+What it actually is. What you buy. What it does. How it's delivered.
+
+## The Customer
+Named persona. Age, job, real life. What they want. What they've tried. Why they're frustrated. Where they hang out.
+
+## The Mission
+Why this exists. What changes in the world if it works.
+
+## The Offer
+Headline product, price point, format. Entry-level offer if relevant. What's included.
+
+## The Category Play
+What it's disrupting. What it's replacing. What the old way looks like vs. the new way.
+
+## The Unfair Advantage
+Why this brand specifically wins. Not features — the structural reason competitors can't copy it.
+
+## The Brand Promise
+One sentence the customer should walk away believing.
+
+## The Tagline
+Three options. Pick one. Mark it as the lead.
+
+## The Manifesto
+Five to seven short lines. The "we believe / we don't believe" voice. This is what someone reads on the about page.
+
+## The Visual Identity
+Pull from the design system we already built — colors, typography, spacing, components. Don't redesign. Just confirm the system applies and note one or two brand-specific applications.
+
+Hard rules:
+- Make decisions. If you're tempted to write "could be X or Y," pick one.
+- Be specific. Real numbers, real prices, real persona names, real product formats.
+- No corporate filler. No "leveraging," no "empowering," no "seamless."
+- Output the .md file directly. No preamble, no commentary after.
+
+Save it as brand-concept.md.
+```
+
+3)
