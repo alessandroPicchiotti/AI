@@ -1,1 +1,116 @@
+Progettare un'architettura **Multi-Tenant** significa fare in modo che un'unica istanza dell'applicazione (e potenzialmente del database) serva più clienti (chiamati *tenant*), garantendo al contempo che i dati di ciascuno siano rigorosamente isolati e protetti.
 
+L'implementazione si articola su due livelli principali: la **strategia del database** (come memorizzare i dati) e il **livello API** (come identificare il tenant e isolare le richieste).
+
+---
+
+## 1. Strategie a livello di Database (SQL Server)
+
+Ci sono tre approcci classici per gestire il multi-tenancy su SQL Server, ognuno con precisi compromessi tra costi, isolamento e complessità.
+
+### A. Un Database per Tenant (Massimo Isolamento)
+
+Ogni cliente ha il proprio database SQL Server dedicato.
+
+* **Vantaggi:** Massimo isolamento dei dati, backup e ripristino indipendenti per singolo cliente, possibilità di scalare verticalmente i singoli database.
+* **Svantaggi:** Costi infrastrutturali elevati e complessità nella gestione delle migrazioni del database (es. se hai 500 tenant, devi aggiornare 500 database).
+
+### B. Database Condiviso, Schema Separato
+
+Tutti i tenant risiedono nello stesso database, ma ognuno ha il proprio schema SQL (es. `tenantA.Orders`, `tenantB.Orders`).
+
+* **Vantaggi:** Buon isolamento a livello di permessi SQL, costi ridotti rispetto al database dedicato.
+* **Svantaggi:** Le migrazioni rimangono complesse e c'è il rischio dell'effetto "vicino rumoroso" (*noisy neighbor*), dove un tenant che fa query pesanti rallenta gli altri.
+
+### C. Database Condiviso e Schema Condiviso (Massima Efficienza)
+
+Tutti i tenant condividono le stesse tabelle. Ogni tabella ha una colonna `TenantId` (es. `int` o `Guid`) per identificare il proprietario della riga.
+
+* **Vantaggi:** Costi minimi, manutenzione e migrazioni semplicissime (si aggiorna un solo database).
+* **Svantaggi:** L'isolamento dipende interamente dal codice dell'applicazione. Un bug in una query potrebbe teoricamente mostrare i dati di un tenant a un altro.
+
+---
+
+## 2. Implementazione a livello di API (.NET 8/10)
+
+Nel backend, il flusso di lavoro si divide in tre fasi fondamentali: identificazione, propagazione e persistenza.
+
+### Fase 1: Tenant Resolution (Identificazione)
+
+Quando arriva una richiesta HTTP, un **Middleware custom** analizza la richiesta per capire chi è il tenant attuale. I metodi più comuni sono:
+
+* **Sottodominio/Dominio:** `cliente1.saas.com` o `cliente2.saas.com`.
+* **Request Header:** Un header HTTP personalizzato come `X-Tenant-Id`.
+* **Access Token (JWT):** Il `TenantId` è inserito all'interno dei claim del token di autenticazione.
+
+### Fase 2: Registrazione nel Container DI
+
+Una volta identificato, il tenant viene memorizzato in un oggetto con ciclo di vita *Scoped* (valido per la singola richiesta HTTP), accessibile ovunque tramite Dependency Injection.
+
+```csharp
+public interface ITenantService
+{
+    string TenantId { get; }
+}
+
+public class TenantService : ITenantService
+{
+    public string TenantId { get; private set; }
+    
+    public void SetTenant(string tenantId) => TenantId = tenantId;
+}
+
+```
+
+### Fase 3: Isolamento in Entity Framework Core
+
+A seconda della strategia database scelta, EF Core si comporta diversamente:
+
+* **Per l'approccio Database Separato:** Il middleware mappa il `TenantId` alla stringa di connessione corretta memorizzata in un catalogo centrale. Il `DbContext` verrà istanziato dinamicamente cambiando la connection string a runtime.
+* **Per l'approccio Schema/Tabella Condivisa:** Si usano i **Global Query Filters** di EF Core. In questo modo, ogni query generata dall'applicazione includerà automaticamente la clausola `WHERE TenantId = @CurrentTenant`, impedendo leak di dati accidentali.
+
+```csharp
+public class ApplicationDbContext : DbContext
+{
+    private readonly ITenantService _tenantService;
+
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, ITenantService tenantService)
+        : base(options)
+    {
+        _tenantService = tenantService;
+    }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        // Applica automaticamente il filtro a tutte le entità che implementano ITenantEntity
+        foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+        {
+            if (typeof(ITenantEntity).IsAssignableFrom(entityType.ClrType))
+            {
+                modelBuilder.Entity(entityType.ClrType)
+                    .HasQueryFilter(ConvertFilterExpression(entityType.ClrType));
+            }
+        }
+    }
+    
+    // Sovrascrivere SaveChanges per iniettare automaticamente il TenantId in fase di inserimento
+    public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+    {
+        foreach (var entry in ChangeTracker.Entries<ITenantEntity>())
+        {
+            if (entry.State == EntityState.Added)
+            {
+                entry.Entity.TenantId = _tenantService.TenantId;
+            }
+        }
+        return base.SaveChangesAsync(cancellationToken);
+    }
+}
+
+```
+
+---
+
+Per comprendere a fondo l'impatto di queste decisioni sulla tua infrastruttura e vedere come si comportano i diversi modelli al variare dei parametri aziendali, puoi utilizzare questo strumento interattivo di simulazione architettonica:
