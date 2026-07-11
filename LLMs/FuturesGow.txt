@@ -15,7 +15,15 @@ Creare un dashboard (https://dribbble.com/search/dashboard)
 https://gemini.google.com/share/edd52302ed69
 https://dribbble.com/search/card-landing-page  -----> "D:\claudefile\2026-07-10 09_50_11-Card-modernize.png"
 
+*******************************
 "benchmark" (o benchmarking) nel contesto di un framework informatico indica un test standardizzato
+un benchmark è un test di misurazione delle prestazioni
+Throughput (Capacità di elaborazione)
+Latenza (Tempo di risposta)
+Consumo di risorse (RAM e CPU)
+Velocità su task specifici:
+*********************************
+
 
 ----Vue.js-----?!?!?!? progressive framework
 
