@@ -9,6 +9,7 @@ Eliminazione Telerik Grid e passaggio a DATASETS client side per le Lista grglia
 Creare dashboard dalla tabelle delles statitiche (vedi Claude)
 Togliere da application ERP e caricare singelton (ninject o Dipendency injection in base al framework)
 Rivedere reportistica, creare report con l' AI???
+Traduzione tbelle standard: [dbo].[sgmelin][dbo].[gmerlin][dbo].[cfamlin]
 
 LAYOUT
 Creare un dashboard (https://dribbble.com/search/dashboard)
