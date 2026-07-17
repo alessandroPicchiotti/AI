@@ -1,3 +1,13 @@
+
+**SRS** 
+(Software Requirements Specification): È il documento tecnico e dettagliato destinato principalmente ai team di sviluppo. Descrive nel dettaglio come il sistema dovrà comportarsi, includendo i requisiti funzionali (le operazioni che il software deve compiere) e quelli non funzionali (performance, sicurezza, infrastruttura, database).
+
+PRD (Product Requirements Document): Redatto solitamente dal Product Manager, descrive cosa si sta costruendo e perché, definendo il valore e le funzionalità dal punto di vista dell'utente finale.
+
+BRD (Business Requirements Document): Documento di altissimo livello rivolto agli stakeholder. Si concentra sugli obiettivi aziendali e sui problemi di business che la nuova applicazione o il sistema andrà a risolvere.
+
+FRD (Functional Requirements Document): Si concentra in modo specifico sulle funzioni logiche del sistema e sulle interazioni dell'utente, spesso senza entrare troppo nei dettagli architetturali e tecnici che si trovano invece in un SRS.
+
 Tutorial
 1️⃣https://syntrolink-gpt-claude-docs.pages.dev/
 2️⃣https://agent-69fe0eb329d83e4e--fabulous-cuchufli-0c30fe.netlify.app/
