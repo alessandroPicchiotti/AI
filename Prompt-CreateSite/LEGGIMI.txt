@@ -1,1 +1,15 @@
+Source site SKILLS.sh
+
+  Prompt-master  (anche su claude.md)
+  "Ogni volta che uso un prompt lungo e non strutturato per un task complesso, esegui automaticamente la skill prompt master sul prompt in input e poi lascia che Claude proceda con il prompt ottimizzato."
+  
+  Humanizer 
+  find-skills
+  Front End Slides
+
+CREATE APP
+- PRD product requierd document  -> altro che DRF
+- AI Studio / Build/ new app --> prompt 
+- Save su Github
+- Backend Claude
 
