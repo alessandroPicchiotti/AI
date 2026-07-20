@@ -1,11 +1,19 @@
-Source site SKILLS.sh
+Source site SKILLS.sh o PLUGIN
 
   Prompt-master  (anche su claude.md)
-  "Ogni volta che uso un prompt lungo e non strutturato per un task complesso, esegui automaticamente la skill prompt master sul prompt in input e poi lascia che Claude proceda con il prompt ottimizzato."
-  
+  "Ogni volta che uso un prompt lungo e non strutturato per un task complesso, esegui automaticamente la skill prompt master sul prompt in input e poi lascia che Claude proceda con il prompt ottimizzato."  
   Humanizer 
   find-skills
   Front End Slides
+  superpowers al posto di plan.
+  Creare diagrammi ascii  _/\_/\-
+
+  Utilizzare gli HOOK sono DETERMINISTICI (li usa sempre) claude.md (può anche non usarlo) NO DETERMINISTICO Esempio: emetti un suono quando hai finito un operazione
+
+/statusline modello , consumo giornaliero grndezza contesto % + token
+/security-review
+Overview.md --> + DETTAGLIATO --> poi diciamo a claude di far puntare CLAUDE.md a questo file Overview.md (+ contesto non deve rileggere sempre il il codebase)
+              si posso aggiungere anche dei commetni per ogni file del progetto.
 
 CREATE APP
 - PRD product requierd document  -> altro che DRF
