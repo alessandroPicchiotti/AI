@@ -1,0 +1,39 @@
+01
+SCOVARE
+
+Blindspot pass  UNKNOWN UNKNOWNS
+Gli chiedi di trovarti le cose che non sai di dover chiedere. Legge la codebase vera e ti tira fuori i vincoli nascosti.
+PROMPT DA COPIARE  (COPIA)
+Devo rifare questo sito. Prima di toccare qualsiasi cosa, fammi un blindspot pass sui miei unknown unknowns.
+Leggi la codebase e dimmi tutto quello che rischio di rompere o che sto dando per scontato. Voglio la lista delle cose che non so di dover considerare.
+
+02
+CHIARIRE
+
+Fatti intervistare KNOWN UNKNOWNS
+Invece di scrivere il prompt perfetto, gli fai fare le domande a te. Una alla volta, sennò è un muro.
+
+PROMPT DA COPIARE (COPIA)
+
+Intervistami una domanda alla volta su cosa voglio dal nuovo sito. Dai priorità alle domande la cui risposta cambia l'architettura o il design. Aspetta la mia risposta prima della prossima.
+
+03
+VEDERE
+
+Prototipi UNKNOWN KNOWNS
+Il gusto non lo descrivi, lo riconosci. Quindi ti fai fare più versioni e reagisci.
+
+PROMPT DA COPIARE
+
+Prima di toccare il sito vero, fammi un file HTML con 4 direzioni di design completamente diverse per la homepage, dati finti ma realistici. Voglio reagire al layout prima che tu tocchi il codice.
+
+04
+
+Testo Estratto
+UNKNOWN UNKNOWNS
+
+Non so nemmeno che esista
+
+"Cosa non ho proprio considerato? Di quale conoscenza non sono nemmeno consapevole? So quanto in alto può arrivare una cosa?"
+
+Sul sito: non sai che c'è una pipeline automatica che scrive nel blog ogni giorno, e che il nuovo sito deve mantenere quel percorso. Non l'hai omesso: non sapevi che esistesse.
