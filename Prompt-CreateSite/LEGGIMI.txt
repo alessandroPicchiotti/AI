@@ -6,14 +6,21 @@ Source site SKILLS.sh o PLUGIN
   find-skills
   Front End Slides
   superpowers al posto di plan.
-  Creare diagrammi ascii  _/\_/\-
-
+  Creare diagrammi ascii  _/\_/\-  (fa rispoarmiare un sacco di token)
+  Context7 --> pemette a claude di accedere ad una documentazione più aggiornata
+  playwright --> permette a claude di avviare il browser e testare le applicazioni
   Utilizzare gli HOOK sono DETERMINISTICI (li usa sempre) claude.md (può anche non usarlo) NO DETERMINISTICO Esempio: emetti un suono quando hai finito un operazione
+
+MCP
+  GitHub
 
 /statusline modello , consumo giornaliero grndezza contesto % + token
 /security-review
+/insights   -> report su come stai usando claude
+
 Overview.md --> + DETTAGLIATO --> poi diciamo a claude di far puntare CLAUDE.md a questo file Overview.md (+ contesto non deve rileggere sempre il il codebase)
-              si posso aggiungere anche dei commetni per ogni file del progetto.
+              si posso aggiungere anche dei commetni per ogni file del progetto./
+
 
 CREATE APP
 - PRD product requierd document  -> altro che DRF
