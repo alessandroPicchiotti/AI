@@ -21,3 +21,4 @@
 claude --verbose  -->output + dettagliati
 claude --sonnet   -->modello
 claude --allows   -->permessi
+claude -r  --> Resume session
