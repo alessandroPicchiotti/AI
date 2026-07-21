@@ -40,8 +40,10 @@ SUB-AGENTS
   nome: code-improvement-advisor
   Quando digiterò un prompt per questa funzionalità claude lo invocherà
 
-AGENTS VIEW
-  claude agents
+AGENT VIEW
+  claude agents : devi entrare con una sessione nuova da terminale 
+  1. DAlla lista può lanciare un camndom lui esegue in background e tu ne digiti un altro
+  2. Puoi clikkare su una delle voci da duplicare, per ritornare alla schermata AGENT VIEW digitare /background
 
 Working tree: Albero di lavoro con sub-agenti o sessioni diverse che lavorino in parallelo
 
