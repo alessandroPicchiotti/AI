@@ -19,16 +19,27 @@ CLAUDE.md
 MCP
   GitHub
 
-/statusline modello , consumo giornaliero grndezza contesto % + token
-/security-review
-/insights   -> report su come stai usando claude
-/rewind  --> Ti salva le chappet (rollback)
+Coomands
+  /statusline modello , consumo giornaliero grndezza contesto % + token
+  /security-review
+  /insights   -> report su come stai usando claude
+  /rewind  --> Ti salva le chappet (rollback)
+  /Resume /continue --> per riprenderele conversazioni
 
 FLAG (il trattino si pronuncia dash)
--p : alla fine di ogni input utente, partirà l'agente senza chiedere nulla e andrà spedito fino alla fine.
+  -p : alla fine di ogni input utente, partirà l'agente senza chiedere nulla e andrà spedito fino alla fine.
 
 PLUGIN:
-ralph-loop
+  ralph-loop
+
+SUB-AGENTS
+  Lavorano in una sessione a parte, non avendo output si risparmia in token 
+  /agents -> Libray ->Create new agent
+  testo di esempio per un sub-agent: "Un agente per il miglioramento del codice che scansiona i file e suggerisce miglioramenti per la leggibilità, le prestazioni e le best practice. Dovrebbe spiegare ogni         problema, mostrare il codice attuale e fornire una versione migliorata."
+
+  nome: code-improvement-advisor
+  Quando digiterò un prompt per questa funzionalità claude lo invocherà
+
 
 Working tree: Albero di lavoro con sub-agenti o sessioni diverse che lavorino in parallelo
 
