@@ -40,6 +40,8 @@ SUB-AGENTS
   nome: code-improvement-advisor
   Quando digiterò un prompt per questa funzionalità claude lo invocherà
 
+AGENTS VIEW
+  claude agents
 
 Working tree: Albero di lavoro con sub-agenti o sessioni diverse che lavorino in parallelo
 
