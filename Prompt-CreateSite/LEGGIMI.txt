@@ -67,3 +67,7 @@ CREATE APP
 
 README.md
   non lo legge nel prompt come CLAUDE.md però viene letto, come tutti i file del progetto,  in fase di comando /init ed arricchire il CLAUDE.md (forse si può chiedere di creare un rifermineto di README in CLAUD.md)
+
+
+SECOND BRAIN
+"Parti dalla cartella corrente, vai a modificare Claude.md affinché contenga una descrizione specifica di ogni cartella e di ogni file contenuto in quella cartella, in modo che funzioni da indice per Claude stesso quando deve andare a recuperare un file per rispondere a una richiesta dell'utente. L'indice deve essere scritto in maniera concisa ma completa. Non devi assolutamente tralasciare alcun tipo di file o cartella: devono essere tutti quanti tracciati. Soprattutto, devi anche aggiungere un'istruzione, sempre all'interno di Claude.md, affinché ogni volta che un file o una cartella vengono modificati, aggiunti o rimossi, queste modifiche vengano riflesse in Claude in modo che sia sempre aggiornato allo stato corrente del progetto."
