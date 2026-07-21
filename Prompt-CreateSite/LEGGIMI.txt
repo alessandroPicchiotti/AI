@@ -13,6 +13,8 @@ Source site SKILLS.sh o PLUGIN
   
   npx skills add https://github.com/zenobi-us/dotfiles --skill dotnet-framework-4-8-expert
 
+CLAUDE.md
+  CLAUDE.local.md : Ulteriori informazioni oltre claude.md creato
 
 MCP
   GitHub
@@ -20,6 +22,15 @@ MCP
 /statusline modello , consumo giornaliero grndezza contesto % + token
 /security-review
 /insights   -> report su come stai usando claude
+/rewind  --> Ti salva le chappet (rollback)
+
+FLAG (il trattino si pronuncia dash)
+-p : alla fine di ogni input utente, partirà l'agente senza chiedere nulla e andrà spedito fino alla fine.
+
+PLUGIN:
+ralph-loop
+
+Working tree: Albero di lavoro con sub-agenti o sessioni diverse che lavorino in parallelo
 
 Overview.md --> + DETTAGLIATO --> poi diciamo a claude di far puntare CLAUDE.md a questo file Overview.md (+ contesto non deve rileggere sempre il il codebase)
               si posso aggiungere anche dei commetni per ogni file del progetto./
