@@ -64,3 +64,6 @@ CREATE APP
 - Save su Github
 - Backend Claude
 
+
+README.md
+  non lo legge nel prompt come CLAUDE.md però viene letto, come tutti i file del progetto,  in fase di comando /init ed arricchire il CLAUDE.md (forse si può chiedere di creare un rifermineto di README in CLAUD.md)
