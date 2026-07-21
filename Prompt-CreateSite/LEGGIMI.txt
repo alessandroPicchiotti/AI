@@ -10,6 +10,9 @@ Source site SKILLS.sh o PLUGIN
   Context7 --> pemette a claude di accedere ad una documentazione più aggiornata
   playwright --> permette a claude di avviare il browser e testare le applicazioni
   Utilizzare gli HOOK sono DETERMINISTICI (li usa sempre) claude.md (può anche non usarlo) NO DETERMINISTICO Esempio: emetti un suono quando hai finito un operazione
+  
+  npx skills add https://github.com/zenobi-us/dotfiles --skill dotnet-framework-4-8-expert
+
 
 MCP
   GitHub
@@ -24,7 +27,7 @@ Overview.md --> + DETTAGLIATO --> poi diciamo a claude di far puntare CLAUDE.md 
 
 CREATE APP
 - PRD product requierd document  -> altro che DRF
-- AI Studio / Build/ new app --> prompt 
+- DESING FRONTEND: AI Studio / Build/ new app --> prompt 
 - Save su Github
 - Backend Claude
 
