@@ -1,4 +1,7 @@
 
+<script src="~/lib/alpinejs/cdn.min.js" asp-append-version="true" defer/>
+
+
 Utilizzare TASK AWAIT
 Convertire .aspx in cshtml per eliminare il view state
 Passaggio a Boostrap 5+ o Tailwind
