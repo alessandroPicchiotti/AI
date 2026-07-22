@@ -12,7 +12,7 @@ Eliminazione Telerik Grid e passaggio a DATASETS client side per le Lista grglia
 Creare dashboard dalla tabelle delles statitiche (vedi Claude)
 Togliere da application ERP e caricare singelton (ninject o Dipendency injection in base al framework)
 Rivedere reportistica, creare report con l' AI???
-Traduzione tbelle standard: [dbo].[sgmelin][dbo].[gmerlin][dbo].[cfamlin]
+Traduzione tabelle da HH o TAbhh a standard: [dbo].[sgmelin][dbo].[gmerlin][dbo].[cfamlin]
 
 LAYOUT
 Creare un dashboard (https://dribbble.com/search/dashboard)
@@ -31,7 +31,7 @@ Velocità su task specifici:
 
 
 ----Vue.js-----?!?!?!? progressive framework
-
+----Alpine.js--?!?!?!??!
 
 SKILLS: Gow\.claude\commands
   ---------------------migrating-aspnet-framework-to-core.md
