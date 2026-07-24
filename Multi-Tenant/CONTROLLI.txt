@@ -1,0 +1,6 @@
+SELECT 
+    name AS [Database],
+    snapshot_isolation_state_desc AS [SnapshotIsolationState], -- ON / OFF
+    is_read_committed_snapshot_on AS [IsReadCommittedSnapshotOn] -- 1 (ON) / 0 (OFF)
+FROM sys.databases
+WHERE name = 'TuoDatabase';
