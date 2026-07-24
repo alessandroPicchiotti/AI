@@ -4,3 +4,21 @@ SELECT
     is_read_committed_snapshot_on AS [IsReadCommittedSnapshotOn] -- 1 (ON) / 0 (OFF)
 FROM sys.databases
 WHERE name = 'TuoDatabase';
+
+
+
+******************************************
+****Come eseguirlo***********************
+*****************************************
+
+USE master;
+GO
+
+-- 1. Attiva l'isolamento snapshot (istantaneo)
+ALTER DATABASE COLLAUDO_MED SET ALLOW_SNAPSHOT_ISOLATION ON;
+
+-- 2. Chiude le connessioni attive ed esegue RCSI
+ALTER DATABASE COLLAUDO_MED SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+ALTER DATABASE COLLAUDO_MED SET READ_COMMITTED_SNAPSHOT ON;
+ALTER DATABASE COLLAUDO_MED SET MULTI_USER;
+GO
