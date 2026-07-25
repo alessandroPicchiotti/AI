@@ -1,0 +1,1 @@
+Use a "Fan-out" / "fan-in" (N researchers -> synthesizer) approach to research the question "how best should I optimize this codebase"?
