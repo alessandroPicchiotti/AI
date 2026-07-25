@@ -12,3 +12,5 @@
              xdt:Transform="SetAttributes(runAllManagedModulesForAllRequests)" />
   </system.webServer>
 </configuration>
+
+1.  <compilation debug="true" targetFramework="4.8" optimizeCompilations="true">
