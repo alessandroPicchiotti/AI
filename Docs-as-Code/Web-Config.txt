@@ -1,0 +1,14 @@
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+  <system.web>
+    <compilation xdt:Transform="RemoveAttributes(debug)" />
+    <!-- In produzione l'utente non deve vedere stack trace e percorsi fisici del server -->
+    <customErrors mode="RemoteOnly" xdt:Transform="SetAttributes(mode)" />
+  </system.web>
+  <system.webServer>
+    <!-- Evita che le directory prive di documento di default siano navigabili -->
+    <directoryBrowse enabled="false" xdt:Transform="SetAttributes(enabled)" />
+    <!-- I moduli gestiti non devono girare su CSS/JS/immagini -->
+    <modules runAllManagedModulesForAllRequests="false"
+             xdt:Transform="SetAttributes(runAllManagedModulesForAllRequests)" />
+  </system.webServer>
+</configuration>
