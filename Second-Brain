@@ -1,0 +1,74 @@
+# Il tuo Secondo Cervello AI
+
+Questa è la risorsa gratuita del video. Dentro trovi il **prompt pronto** per costruirti un secondo cervello con Claude Code + Obsidian, e le poche istruzioni per usarlo. È l'idea originale di Andrej Karpathy ("LLM Wiki"), adattata in italiano.
+
+## Cosa ti serve (entrambi gratis)
+
+- **Obsidian** — per vedere il tuo cervello come una mappa di note collegate: https://obsidian.md
+- **Claude Code** — l'AI che legge, scrive e mantiene le note: https://claude.com/claude-code
+
+## Come si usa (4 passi)
+
+1. Apri **Obsidian** e crea un nuovo vault (è solo una cartella sul tuo PC). Chiamalo come vuoi, per esempio "Il-Mio-Cervello".
+2. Apri quella cartella in **Claude Code.**
+3. **Incolla il prompt qui sotto** in Claude Code e premi invio. Claude costruisce da solo tutta la struttura (regole, indice, cartelle).
+4. Da qui in poi: metti un documento nella cartella `raw/` e scrivi "processa questo file". Claude lo legge, crea le pagine e le collega. Più fonti aggiungi, più il cervello cresce.
+
+## Il prompt (copia e incolla)
+
+```markdown
+Sei il mio agente per costruire e mantenere un secondo cervello: una knowledge base personale fatta di file markdown, che vive in questa cartella. Implementa esattamente l'idea qui sotto. Guidami passo dopo passo: prima crea l'infrastruttura (lo schema CLAUDE.md, l'index.md, il log.md, le cartelle), poi mostrami il primo esempio di ingestione. Da questo momento in poi ogni nostra interazione segue esattamente questo schema.
+
+## L'idea di fondo
+
+La maggior parte dei modi di usare un'AI con i propri documenti funziona come il RAG: carichi dei file, l'AI ne pesca dei pezzi al momento della domanda e genera una risposta. Funziona, ma l'AI riscopre la conoscenza da zero ogni volta. Non si accumula niente.
+
+Qui l'idea è diversa. L'AI costruisce e mantiene in modo incrementale un wiki persistente: una collezione di file markdown, collegati tra loro, che sta tra me e le fonti grezze. Quando aggiungo una fonte nuova, tu non la indicizzi solo: la leggi, ne estrai le informazioni chiave e le integri nel wiki esistente — aggiorni le pagine, rivedi i riassunti, segnali dove il nuovo dato contraddice quello vecchio, rafforzi o metti in discussione la sintesi. La conoscenza si compila una volta e poi si tiene aggiornata, non si ri-deriva ad ogni domanda.
+
+Il wiki è un artefatto che si accumula e cresce: i collegamenti ci sono già, le contraddizioni sono già segnalate, la sintesi riflette già tutto quello che ho letto. Io curo le fonti, esploro e faccio le domande giuste. Tu fai tutto il lavoro sporco: riassumere, collegare, archiviare, tenere in ordine. Io (quasi) non scrivo mai il wiki a mano — lo scrivi e lo mantieni tu.
+
+## Architettura — tre livelli
+
+1. raw/ — le mie fonti grezze (articoli, documenti, note, trascrizioni). Sono immutabili: tu leggi da qui, non modifichi mai niente qui dentro. È la fonte di verità.
+2. wiki/ — le pagine markdown generate da te. Questo livello è tuo: crei le pagine, le aggiorni quando arrivano fonti nuove, mantieni i collegamenti, tieni tutto coerente. Struttura:
+   - wiki/index.md — il catalogo di tutte le pagine (link + una riga di sommario ciascuna), organizzato per categoria.
+   - wiki/log.md — lo storico cronologico, in sola aggiunta, delle operazioni. Prefisso per riga, es: ## [2026-07-20] ingest | Titolo fonte.
+   - wiki/overview.md — la sintesi di alto livello, la "tesi" che evolve.
+   - wiki/entita/ — pagine su persone, aziende, luoghi, prodotti.
+   - wiki/concetti/ — pagine su concetti e temi trasversali.
+   - wiki/sintesi/ — sommari e confronti che nascono dalle domande.
+3. CLAUDE.md (lo schema) — il file di configurazione che ti dice come è strutturato il wiki, quali sono le convenzioni e quali workflow seguire. È ciò che ti rende un curatore disciplinato invece di un chatbot generico. Lo facciamo evolvere insieme nel tempo.
+
+## Le tre operazioni
+
+Ingest. Metto una fonte nuova in raw/ e ti dico di processarla. Tu: la leggi, mi dici in due righe i punti chiave, scrivi la pagina-sommario nel wiki, aggiorni le pagine entità/concetti collegate, aggiorni l'index.md e aggiungi una riga al log.md. Una singola fonte può toccare 10-15 pagine collegate. Se un dato nuovo contraddice una nota esistente, non accumulare due verità: riscrivi la nota con il dato aggiornato e dimmi esplicitamente cosa hai cambiato e perché (es: "attenzione: questo contraddice la nota X, la riscrivo — prima diceva 40%, ora 62%").
+
+Query. Ti faccio una domanda. Tu cerchi nell'index.md, apri solo le pagine rilevanti (non rileggere tutto il vault), sintetizzi la risposta e mi citi le pagine che hai usato. Se la risposta è di valore, la archivi come nuova pagina in wiki/sintesi/.
+
+Lint. Ogni tanto ti chiedo un controllo di salute del wiki: contraddizioni tra pagine, affermazioni superate da fonti più recenti, pagine orfane senza link in entrata, concetti importanti senza una pagina propria, collegamenti mancanti, buchi da colmare.
+
+## Regole operative (mettile dentro il CLAUDE.md che generi)
+
+- File in kebab-case.md. Collegamenti tra pagine con [[nome-file]].
+- Ogni pagina wiki ha un frontmatter minimo: titolo, tipo, tag, fonti, creato, aggiornato.
+- Non inventare: se un'informazione non c'è nelle fonti, dillo. Ogni affermazione del wiki deve essere tracciabile a una fonte in raw/.
+- Aggiorna, non duplicare: se una fonte arricchisce un tema esistente, aggiorna la pagina — non crearne una nuova.
+- Regola del conflitto (importante): quando una fonte nuova contraddice una nota esistente, riscrivi la nota e segnalami il conflitto a parole. Non tenere mai due versioni contraddittorie.
+
+## Cosa fare adesso, in ordine
+
+1. Crea lo schema CLAUDE.md con tutte le regole qui sopra. Dentro il CLAUDE.md scrivi le tre operazioni (ingest, query, lint) come comandi che riconosci automaticamente: quando ti dico "ingest questo" / "processa questo file", quando faccio una domanda, o quando ti dico "lint" / "controlla il wiki", esegui subito il flusso corrispondente descritto sopra, senza che io te lo rispieghi ogni volta.
+2. Crea le cartelle raw/ e wiki/ con index.md, log.md, overview.md e le sottocartelle entita/, concetti/, sintesi/.
+3. Mostrami com'è fatta la struttura e spiegami in tre righe come funziona l'ingest.
+4. Aspetta che io metta le fonti in raw/ e ti dica di processarle. Posso dartene anche più di una alla volta: processale tutte, crea le pagine e collega tra loro gli argomenti che si toccano (stesse entità, stessi concetti).
+```
+
+## La fonte originale
+
+L'idea nasce da Andrej Karpathy — "LLM Wiki": https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
+
+## Vuoi farlo per la tua azienda?
+
+Quello che costruisci con questo prompt è il tuo secondo cervello personale. La versione per la tua azienda — connessa agli strumenti che usi ogni giorno, con il team che ci scrive dentro — la costruiamo dal vivo nel workshop gratuito del 20, 21 e 22 luglio alle 20:30. 
+
+Iscriviti qui 👉 https://workshop.aibuildersclub.it/?utm_source=youtube
