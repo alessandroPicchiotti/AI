@@ -7,3 +7,15 @@
     Describe each service, port, and real call paths.
     Cite the source file behind every claim.
 
+
+
+#RIEPILOGO
+
+
+claude -p "Rewrite docs/ARCHITECTURE.md from the
+actual code. Describe each service, its port, and
+the real call paths. Cite the source file behind
+every claim. Do NOT touch the '# # Decisions'
+section: it is hand-written."
+
+Then study `git diff docs/' before you commit.
