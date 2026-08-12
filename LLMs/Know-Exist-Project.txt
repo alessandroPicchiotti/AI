@@ -1,1 +1,9 @@
-Prompt:  >>> mappa di alto livello: servizi, punti di ingresso, come interagiscono. I)Il documento servirà anche come onboarding.
+1. Prompt:  >>> mappa di alto livello: servizi, punti di ingresso, come interagiscono. I)Il documento servirà anche come onboarding. Spiegherà anche le seguenze delle procedure in ordine
+2. Una mappa generale, un percorso tracciato, che possa diventare una mappa per il team.
+3. churn analysis
+4. generating architecture documentation
+5. ARCHITECTURE.md >>>>>>
+    write docs/ARCHITECTURE.md from the actual code.
+    Describe each service, port, and real call paths.
+    Cite the source file behind every claim.
+
