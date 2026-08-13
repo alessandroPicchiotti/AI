@@ -1,0 +1,15 @@
+npx skills add <repository-url-o-nome-skill> --skill superpowers
+
+Superpowers è progettato per dare all'IA il controllo attivo sul flusso di lavoro e sul sistema locale o di sviluppo.
+
+Le sue utilità principali comprendono:
+
+Esecuzione di comandi e Script: Permette all'IA di eseguire comandi di terminale, lanciare build, eseguire test automatici o analizzare i log per rilevare errori in autonomia.
+
+Gestione Avanzata dei File: Consente all'IA di fare refactoring strutturale, creare, rinominare o eliminare file e cartelle in modo sicuro e guidato.
+
+Brainstorming e TDD (Test-Driven Development): Alcune integrazioni "Superpowers" forzano l'IA a seguire metodologie precise (es. scrivere prima i test che falliscono, poi il codice per farli passare, e infine fare il refactoring).
+
+Navigazione e Scraping Web: Fornisce la capacità di interagire con il browser per testare interfacce, verificare layout o estrarre dati.
+
+In breve: trasforma l'IA da semplice "generatore di testo/codice" a un agente operativo autonomo.
