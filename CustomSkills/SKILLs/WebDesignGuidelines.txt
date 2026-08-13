@@ -1,0 +1,4 @@
+
+command >>>>   npx skills add https://github.com/vercel-labs/agent-skills --skill web-design-guidelines
+
+Link github >>>>>>>  https://github.com/vercel-labs/agent-skills/blob/main/skills/web-design-guidelines/SKILL.md 
