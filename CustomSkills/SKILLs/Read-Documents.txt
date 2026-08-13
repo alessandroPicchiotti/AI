@@ -1,0 +1,14 @@
+7. PDF / DOCX / PPTX /XLSX (Anthropic)
+Why you should care: Claude can't natively read most document formats. These skills add full
+document parsing - extract, summarize, flag key clauses - directly in the terminal. What used
+to take 90 minutes of manual reading takes under a minute.4
+How to use it: Drop a document path into Claude and invoke the relevant skill. It parses the file
+and returns a structured summary, key points, and anything you ask it to flag.
+How to install:
+
+npx skills add https://github.com/anthropics/skills -skill pdf
+npx skills add https://github.com/anthropics/skills -- skill docx
+
+Use case: A client sends you a 40-page SaaS contract as a PDF. You drop it into Claude, invoke
+the PDF skill, and ask it to extract all termination clauses, liability caps, and data ownership
+terms. Clean summary in 45 seconds.
