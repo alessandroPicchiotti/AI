@@ -1,0 +1,16 @@
+^ 10. trailofbits/skills - Security Scanning
+Why you should care: Trail of Bits is one of the most respected security research firms in the
+world. They built a suite of skills for Claude Code that brings CodeQL, Semgrep, and vulnerability
+detection directly into your workflow. Professional-grade security tooling, inside the terminal.
+How to use it: Install the plugin, then invoke specific skills during code review - static analysis,
+vulnerability scanning, constant-time analysis for crypto code. Claude runs the checks and
+returns findings with remediation suggestions.
+
+How to install:
+
+/plugin marketplace add trailofbits/skills
+/plugin menu
+
+Use case: You've just written an authentication module. Before shipping, you invoke the static
+analysis skill. Claude flags two potential injection vulnerabilities and a timing attack surface in
+your token comparison. You fix all three before a single user touches it.
