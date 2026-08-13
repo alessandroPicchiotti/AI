@@ -1,0 +1,7 @@
+I modelli linguistici (LLM) soffrono spesso del limite di knowledge cutoff (conoscenze bloccate alla data di addestramento) o rischiano di produrre "allucinazioni" inventando sintassi di librerie che cambiano rapidamente.
+
+Context7 risolve questo problema:
+
+Documentazione in tempo reale: Recupera ed inietta direttamente nel contesto di Claude la documentazione e le guide ufficiali aggiornate per le librerie che stai utilizzando (es. React, Next.js, Tailwind, o SDK vari).
+
+Sintassi precisa e zero allucinazioni: Assicura che Claude generi codice conforme alle ultime API/metodi rilasciati, evitando funzioni deprecate o inventate.
