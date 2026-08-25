@@ -1,0 +1,17 @@
+# Claude Code + NotebookLM
+
+## Step 1
+
+**Download and Upload that skill to your claude application**
+
+https://drive.google.com/file/d/1ELyQHBBlUTeGYwHQ8_uFmlFCXcOq4sC5/view?usp=sharing
+
+## Step 2
+
+**Run this prompt**
+
+```
+Run the entire notebooklm configuration procedure in Claude Code: https://github.com/krystianwoj22/notebooklm-py
+
+Also open the authentication page in the browser and run throught the steps. Once complete, we should be able to run requests and tasks in Claude Code for notebooklm
+```
