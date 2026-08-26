@@ -1,1 +1,4 @@
 Scraping machine
+https://www.firecrawl.dev/pricing?via=krystian-krystian&dub_id=PiwqHTEQPVJjlxZk
+
+https://docs.firecrawl.dev/sdks/cli
