@@ -33,6 +33,9 @@ PLUGIN:
         Assicurati di includere la richiesta di input da parte dell'utente.
   #drill-me: ti intervista prima di procedere con un plan
   #ui-ux-pro-max-skill >>>>  https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/main/.claude/skills/ui-ux-pro-max
+  #awesome-design-md >>>>>>   https://github.com/VoltAgent/awesome-design-md/blob/main/README.md >>> vai sulla sezione Collection e scegli lo stile da passare a claude:
+                              copy -->> Usage: esempio: npx getdesign@latest add clickhouse
+                              Nuova sessione claude: @desing.md instalalto e dici a CLAUDE CLI di integrarlo
 
 HOOK:
   Utilizzare gli HOOK sono DETERMINISTICI (li usa sempre) claude.md (può anche non usarlo) NO DETERMINISTICO Esempio: emetti un suono quando hai finito un operazione
