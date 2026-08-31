@@ -3,23 +3,37 @@ Applicazione pilota helpdesk: https://github.com/harshitdynamite
 
 PLUGIN:
   exa (ricerca approfondita)
-  code-review
-  ralph-loop
-  Prompt-master  (anche su claude.md)
+  #code-review
+  #ralph-loop
+  #Prompt-master  (anche su claude.md)
    "Ogni volta che uso un prompt lungo e non strutturato per un task complesso, esegui automaticamente la skill prompt master sul prompt in input e poi lascia che Claude proceda con il prompt ottimizzato."  
-  Humanizer : scrive output chiaro
-  find-skills
-  Front End Slides
-  superpowers al posto di plan.
-  Creare diagrammi ascii  _/\_/\-  (fa rispoarmiare un sacco di token)
-  Context7 --> pemette a claude di accedere ad una documentazione più aggiornata
-  playwright --> permette a claude di avviare il browser e testare le applicazioni
-  skill-creator: (di sguito testo di esempio)
-          Vorrei che creassi una skill basata sul progetto "nanobanana ultimate". L'obiettivo è capire come migliorarla per creare un nuovo tipo di skill dedicata alla generazione di post per il blog. Voglio                mantenere uno stile coerente per tutti i blog post, ispirandomi in particolare a questa immagine: mi piace l'idea di un colore di sfondo costante, come quello mostrato qui. Nota anche l'uso coerente              dei colori verde e nero nei diagrammi e la presenza del logo in basso.
+  #Humanizer : scrive output chiaro
+  #find-skills
+  #Front End Slides
+
+  #superpowers >>>>al posto di plan.
+    [1] /brainstorm
+    [2] /writing-pLans
+    [3] /using-git-worktrees -+ Feature branch Decisions doc PLAN.md 
+    [4] /TDD per unit
+    [5] /parallel-agents
+    [6] /executing-plans
+    [7] /code-review
+    [8] /verification Findings + fixes+ Green state
+    [9] /finish-branch+ PR URL
+
+  #Creare diagrammi ascii  _/\_/\-  (fa rispoarmiare un sacco di token)
+
+  #Context7 --> pemette a claude di accedere ad una documentazione più aggiornata
+  #playwright --> permette a claude di avviare il browser e testare le applicazioni
+  #skill-creator: (di sguito testo di esempio)
+        Vorrei che creassi una skill basata sul progetto "nanobanana ultimate". L'obiettivo è capire come migliorarla per creare un nuovo tipo di skill dedicata alla generazione di post per il blog. Voglio               mantenere uno stile coerente per tutti i blog post, ispirandomi in particolare a questa immagine: mi piace l'idea di un colore di sfondo costante, come quello mostrato qui. Nota anche l'uso coerente              dei colori verde e nero nei diagrammi e la presenza del logo in basso.
         
-        Vorrei che creassi una skill che erediti le funzionalità della "nanobanana ultimate" originale, ma che sia ottimizzata per generare un formato, dei preset e uno stile simili, pur permettendo contenuti           diversi per ogni post e relativa immagine. Questa skill sarà utilizzata specificamente per i post del blog relativi ad applicazioni artistiche. Inoltre, vorrei che fosse in grado di migliorare anche le           immagini esistenti; se dovessero esserci incongruenze nella nostra cartella del blog, la skill dovrebbe poterle correggere. Ti chiedo infine di inserire un passaggio in cui mi vengono poste domande               specifiche per confermare i dettagli prima di procedere, inclusi gli aspetti relativi a valutazione (eval), ambito (scope) e test.        
+        Vorrei che creassi una skill che erediti le funzionalità della "nanobanana ultimate" originale, ma che sia ottimizzata per generare un formato, dei preset e uno stile simili, pur permettendo contenuti            diversi per ogni post e relativa immagine. Questa skill sarà utilizzata specificamente per i post del blog relativi ad applicazioni artistiche. Inoltre, vorrei che fosse in grado di migliorare anche le           immagini esistenti; se dovessero esserci incongruenze nella nostra cartella del blog, la skill dovrebbe poterle correggere. Ti chiedo infine di inserire un passaggio in cui mi vengono poste domande               specifiche per confermare i dettagli prima di procedere, inclusi gli aspetti relativi a valutazione (eval), ambito (scope) e test.        
         Assicurati di includere la richiesta di input da parte dell'utente.
-  drill-me: ti intervista prima di procedere con un plan
+  #drill-me: ti intervista prima di procedere con un plan
+  #ui-ux-pro-max-skill >>>>  https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/main/.claude/skills/ui-ux-pro-max
+
 HOOK:
   Utilizzare gli HOOK sono DETERMINISTICI (li usa sempre) claude.md (può anche non usarlo) NO DETERMINISTICO Esempio: emetti un suono quando hai finito un operazione
   
