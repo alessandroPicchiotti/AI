@@ -1,0 +1,44 @@
+1|XML-like|
+
+<contesto>
+  Progetto WordPress, plugin custom, PHP 8.1.
+  Tema base: Astra. Editor a blocchi: Gutenberg.
+</contesto>
+<task>
+  Genera CSS custom per i pulsanti primari del tema (classe.wp-block-button/_link) con effetto hover moderno: leggera scala,
+  transizione fluida, ombra sottile.
+</task>
+<vincoli>
+  - No !important
+  - Responsive (mobile-first)
+  - Usa variabili CSS per i colori
+  - Commenti in italiano
+</vincoli>
+<formato_output>
+  Solo codice CSS, pronto per Aspetto → Personalizza → CSS aggiuntivo.
+  Nessuna spiegazione testuale.
+</formato_output>
+
+6.4.1 CHAIN OF THOUGHT (COT) — RAGIONAMENTO PASSO
+  PASSO [(“non saltare ai consigli generici”) blocca il
+  pattern di risposta più comune]
+
+2|Un sito WordPress + WooCommerce è diventato lento nelle ultime
+  settimane (TTFB > 3s sulle pagine prodotto).
+  Prima di proporre soluzioni, ragiona per fasi:
+  1. Elenca le cause più probabili di un peggioramento del TTFB
+   su WP/WooCommerce in produzione.
+  2. Per ogni causa, indica come verificarla (strumento gratuito,
+   query SQL, log da controllare).
+  3. Ordina le cause per probabilità + facilità di verifica.
+  4. SOLO DOPO aver completato i tre step sopra, proponi un piano
+   di intervento in 5 step ordinati.
+  Non saltare ai consigli generici tipo "usa un caching plugin".
+  Voglio l'analisi diagnostica prima.
+
+3|extended thinking come capacità di prodotto: il mo‐
+  dello “pensa” prima di rispondere, mostrando il ragionamento in un blocco separato.
+  Su Claude Code è attivabile con Alt+T
+
+4|step-by-step
+  aggiun‐gere “pensa passo dopo passo”
