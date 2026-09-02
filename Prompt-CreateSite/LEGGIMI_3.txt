@@ -1,0 +1,75 @@
+6.4.3 PANEL OF EXPERTS (TAVOLA ROTONDA)
+
+1 ESEMPIO
+Sei in una sessione dedicata esclusivamente ad analizzare,
+suggerire ed eventualmente creare frammenti di codice.
+Comportati come se stessimo facendo un dibattito in una
+tavola rotonda con i seguenti esperti virtuali:
+– Ingegnere informatico full stack
+– Programmatore esperto in PHP
+– Programmatore esperto in JavaScript, Node e React
+– Database Administrator e Data Engineer
+– Designer esperto in UX
+– Project Manager
+Per ogni domanda voglio una risposta da ciascun esperto con
+la propria opinione. Se ci sono osservazioni discordanti,
+fammelo notare. Ogni proposta di codice va spiegata e
+commentata passo passo.
+
+2 ESEMPIO
+Domanda: per un task tracker interno (team 8 persone, ~500
+task/mese, dashboard con filtri e una API REST per integrazione
+con Slack), valutate tre opzioni:
+1. App PHP+MySQL custom
+2. Next.js + PostgreSQL custom
+3. Tool no-code (Airtable, Notion, ClickUp)
+Voglio pro/contro da ognuno di voi, e una raccomandazione
+finale con i trade-off principali esplicitati.
+
+PROMPT ENGINNERING
+Prima:
+  Scrivi i test per questa funzion
+Dopo:
+  Contesto: Vitest, modulo di validazione email TypeScript (vedi
+  funzione qui sotto).
+  Task: scrivi una test suite Vitest per `validateEmail`.
+  Vincoli:
+  - Coverage: tutti i return path della funzione
+  - Test edge case: email vuota, troppo lunga (>254), formato
+   invalido (no @, @ multipli, no TLD), TLD numerico
+  - Niente snapshot test
+  - Usa `describe` per raggruppare per scenario, `it` per i casi
+  Formato output: solo blocco di codice TS, nessuna spiegazione.
+
+Prima:
+  Analizza questa funzione e dimmi se ha problemi di sicurezza
+Dopo:
+  Contesto: 
+    code review pre-commit, output verrà parsato da uno
+    script Python per inserire findings in un report.
+  Task: 
+    analizza la funzione PHP qui sotto per problemi di sicurezza
+    (SQL injection, XSS, missing nonce, capability check, segreti
+    hardcoded).
+  Vincoli:
+  - Solo problemi reali, niente "potenziali" troppo speculativi
+  - Per ogni finding: severity (critical/high/medium/low), riga,
+   spiegazione, fix consigliato
+    Formato output: SOLO JSON, nessun testo prima o dopo, schema:
+    {
+     "findings": [
+     {
+     "severity": "critical" | "high" | "medium" | "low",
+     "line": <number>,
+     "type": "<sql_injection | xss | missing_nonce | //.>",
+     "description": "<string>",
+     "suggested_fix": "<string>"
+     }
+     ],
+     "summary": {
+     "critical": <number>,
+     "high": <number>,
+     "medium": <number>,
+     "low": <number>
+     }
+    }
