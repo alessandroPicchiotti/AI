@@ -1,9 +1,14 @@
 # Durante una sessione
 /model opusplan
-# All'avvio
+# All'avvio 
 claude /-model opusplan
 # In settings.json (persistente)
 { "model": "opusplan" }
+
+VALUTA SEMPRE i TRE SCENARI PRIMA DI PROCEDERE:  >>>>> UN costo estremo in fase di pianificazione può prevenire bug + grossi in fase di implementazione
+THINK
+THINK HARD
+ULTRATHINK
 
 /undo >>>>> ANNULLA L'ULTIMA IMPLEMENTAZIONE DEL LLM
 
