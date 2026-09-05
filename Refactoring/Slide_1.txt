@@ -1,0 +1,21 @@
+PROMPT:
+Add a status filter to GET /orders in Orders.Api.
+
+Context: endpoint lives in src/Orders.Api/Endpoints/OrdersEndpoints.cs
+and queries Postgres through OrdersDbContext.
+
+Task: accept ?status=pending| paid| shipped as an optional query
+parameter and filter in the database, not in memory.
+
+Constraints:
+- Touch only OrdersEndpoints.cs and its tests.
+- Do NOT modify OrderManager.cs or any Payments code.
+- Follow the existing minimal API endpoint style.
+
+Done when:
+- New.xUnit tests. cover valid. invalid and missing status. 
+
+ALTRI COMANDI:
+ git diff --stat
+dotnet test  
+curl http://localhost:5001/admin/orders?status=cane >>>>> per testare da console le URL senza andare su browser
