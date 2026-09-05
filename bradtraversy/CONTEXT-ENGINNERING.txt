@@ -1,0 +1,95 @@
+PROMPT:
+  Disegnami un flow chart ascii di come imposteresti il file claude e gli altri .md che tireresti fuori dal file claude.md
+
+
+                              ShopFlow/ — struttura file di memoria
+                              ═══════════════════════════════════
+
+┌────────────────────────────────────────────────────────────────────────┐
+│  CLAUDE.md  (root)                    caricato SEMPRE, ogni sessione   │
+│  ────────────────────────────────────────────────────────────────────  │
+│  • Panoramica (2-3 righe: .NET 8, 3 eseguibili + libreria contratti,   │
+│    Postgres via EF Core/Npgsql)                                        │
+│  • Comandi (build/test/run/docker/seed)                                │
+│  • Architettura — SOLO elenco sintetico dei progetti e a cosa servono, │
+│    non porte/route/dettagli (quelli li ricava dal codice)              │
+│  • "Punti da conoscere prima di modificare" → i pitfall veri:          │
+│      - InProcessQueue non attraversa i processi (2 istanze separate)  │
+│      - MemoryCatalogCache non thread-safe, entità da DbContext morto   │
+│      - Nullable disabilitato ovunque tranne nei test                   │
+│      - Niente migration EF, EnsureCreated() su DB vuoto                │
+│      - Connection string diverse locale vs docker-compose              │
+│      - Test coprono solo helper statici, no integrazione               │
+└────────────────────────────────────────────────────────────────────────┘
+              │
+              │  rimandi impliciti ("vedi Program.cs", "vedi OrderManager")
+              │  NIENTE @import qui — non servirebbe a risparmiare contesto
+              ▼
+┌────────────────────────────────────────────────────────────────────────┐
+│  Codice stesso (Program.cs, route, OrderManager.CreateOrderAsync)      │
+│  → Claude lo legge quando serve, non va duplicato in prosa nel .md     │
+└────────────────────────────────────────────────────────────────────────┘
+
+
+                    contenuto ESTRATTO dal CLAUDE.md originale
+                    ═══════════════════════════════════════════
+
+┌────────────────────────────────────────────────────────────────────────┐
+│  .claude/rules/payments.md                                             │
+│  ────────────────────────────────────────────────────────────────────  │
+│  ---                                                                    │
+│  paths:                                                                 │
+│    - "src/Payments.Api/**"                                              │
+│  ---                                                                    │
+│  • FakePaymentGateway: latenza 150–650ms                                │
+│  • timeout su importi ≥ 1000                                            │
+│  • ~15% timeout casuale                                                 │
+│  • decline su carte che finiscono con 0002                              │
+│                                                                          │
+│  caricata SOLO quando Claude legge/tocca file sotto Payments.Api/       │
+└────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────┐
+│  .claude/rules/pricing.md                                              │
+│  ────────────────────────────────────────────────────────────────────  │
+│  ---                                                                    │
+│  paths:                                                                 │
+│    - "src/Orders.Api/**/OrderManager.cs"                                │
+│  ---                                                                    │
+│  • ApplyVolumeDiscountPercent / sconto stagionale                       │
+│  • CalculateTax: switch ~60 regioni US/EU, default 5%                   │
+│  • CalculateShipping: soglia gratuita 150, sovrapprezzo AK/HI           │
+│  • RoundCurrency: MidpointRounding.AwayFromZero                         │
+│                                                                          │
+│  caricata SOLO quando Claude tocca la logica di pricing                 │
+└────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────┐
+│  ELIMINATO del tutto (non un file — semplice pulizia)                  │
+│  ────────────────────────────────────────────────────────────────────  │
+│  "(e.g. never edit the database directly; always go through            │
+│   EF Core migrations)"  → residuo di template, nessun valore            │
+└────────────────────────────────────────────────────────────────────────┘
+
+
+                    riepilogo del flusso di caricamento
+                    ═══════════════════════════════════
+
+     Avvio sessione Claude Code
+              │
+              ▼
+     ┌─────────────────────┐
+     │ CLAUDE.md (root)     │  ← sempre in contesto
+     │ + rules SENZA paths  │     (qui non ce ne sono: tutto ciò
+     └─────────────────────┘        che resta è sempre valido)
+              │
+              ▼
+     Claude lavora sul task ──────► tocca src/Payments.Api/**?
+              │                              │
+              │                              ▼ sì
+              │                     carica .claude/rules/payments.md
+              │
+              └────────► tocca OrderManager.cs (pricing)?
+                                     │
+                                     ▼ sì
+                            carica .claude/rules/pricing.md
