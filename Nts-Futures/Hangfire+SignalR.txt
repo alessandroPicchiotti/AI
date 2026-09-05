@@ -1,0 +1,45 @@
+┌─────────────┐        1. POST /orders            ┌──────────────────┐
+│   Browser   │ ─────────────────────────────────▶│  OrdersController │
+│  (Client)   │                                    └──────────────────┘
+└─────────────┘                                             │
+      ▲                                                     │ 2. Validazione rapida
+      │                                                     │    (dati minimi)
+      │ 6. Risposta immediata                                ▼
+      │    202 Accepted                            ┌──────────────────┐
+      │    { orderId, status:"processing" }        │  BackgroundJob    │
+      └─────────────────────────────────────────── │  .Enqueue(...)    │
+                                                     └──────────────────┘
+                                                             │
+                                                             │ 3. Job salvato in coda
+                                                             ▼
+                                                  ┌───────────────────────┐
+                                                  │  Hangfire Storage     │
+                                                  │  (SQL Server / Redis) │
+                                                  └───────────────────────┘
+                                                             │
+                                                             │ 4. Worker preleva il job
+                                                             ▼
+                                                  ┌───────────────────────┐
+                                                  │  Hangfire Worker      │
+                                                  │  ProcessOrderJob()    │
+                                                  │  - calcolo prezzi     │
+                                                  │  - check magazzino    │
+                                                  │  - pagamento          │
+                                                  │  - invio email        │
+                                                  └───────────────────────┘
+                                                             │
+                                                             │ 5. Job completato
+                                                             ▼
+                                                  ┌───────────────────────┐
+                                                  │  SignalR Hub         │
+                                                  │  .SendAsync(         │
+                                                  │   "OrderCompleted")  │
+                                                  └───────────────────────┘
+                                                             │
+      ┌──────────────────────────────────────────────────────┘
+      │ 7. Push in tempo reale
+      ▼
+┌─────────────┐
+│   Browser   │  riceve notifica "OrderCompleted"
+│  (Client)   │  e aggiorna la UI senza fare polling
+└─────────────┘
