@@ -1,0 +1,14 @@
+public static async Task<PagedResult<OrderSummaryDto>> GetOrders(ShopFlowDb db, int customerId, int page, int pageSize)
+
+    pageSize = Math.Clamp(pageSize, 1, 100);
+    var query = db.Orders
+    .AsNoTracking()
+    .Where(o => o.CustomerId == customerId)
+    .OrderByDescending(o => o.CreatedAt);
+    var total = await query.CountAsync();
+    var items = await query
+    .Skip((page - 1) * pageSize)
+    . Take(pageSize)
+    .Select(o => new OrderSummaryDto(o. Id, o.CreatedAt,
+    o.Status, o. Total))
+    .ToListAsvnc()
