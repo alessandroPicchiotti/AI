@@ -1,0 +1,14 @@
+PROMPTS 
+1.  Mappa di alto livello: servizi, punti di ingresso, come funzionano rappresentata con un flow ascii con tutti i worklow possibili  di funzionamento
+2.  Cosa sorprenderebbe un nuovo sviluppatore in questo codebase?
+3.  Chiediamo quali file abbiano subito più modifiche negli ultimi sei mesi e Claude esegue per noi la query `git log`. Riassumere i commit per capire dove si è intervenuto.
+4.  Il piano: generare un file docs/ARCHITECTURE.md a partire dal codice effettivo e analizzare i motivi per cui le descrizioni generate rimangono fedeli alla realtà a partire dal codice effettivo.
+    Descrivi ogni servizio, porta e i percorsi di chiamata reali.
+    Cita il file sorgente alla base di ogni affermazione.
+5.  claude -p "Riscrivi docs/ARCHITECTURE.md basandoti sul
+    codice effettivo. Descrivi ogni servizio, la relativa ingresso e
+    i percorsi di chiamata reali. Cita il file sorgente alla base
+    di ogni affermazione. NON modificare la sezione '# # Decisions':
+    è stata scritta a mano."    
+    Successivamente, esamina `git diff docs/` prima di effettuare il commit.
+6.  BUG: fornisci il dati del ticket e chiedi a claude di ri-simulare il BUG perima di ogni altre cosa
