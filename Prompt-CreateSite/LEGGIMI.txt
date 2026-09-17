@@ -24,6 +24,7 @@ PLUGIN:
   #Humanizer : scrive output chiaro
   #find-skills
   #Front End Slides
+  #wait-what Skill  (matt pocock)
 
   #superpowers >>>>al posto di plan.
     [1] /brainstorm
