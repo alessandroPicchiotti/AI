@@ -1,3 +1,4 @@
 Sito:
 https://github.com/multica-ai/andrej-karpathy-skills/blob/main/.cursor/rules/karpathy-guidelines.mdc
 
+Applicare nel CLAUDE.md users
