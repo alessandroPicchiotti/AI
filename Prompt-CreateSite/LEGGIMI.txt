@@ -51,18 +51,24 @@ PLUGIN:
   #awesome-design-md >>>>>>   https://github.com/VoltAgent/awesome-design-md/blob/main/README.md >>> vai sulla sezione Collection e scegli lo stile da passare a claude:
                               copy -->> Usage: esempio: npx getdesign@latest add clickhouse
                               Nuova sessione claude: @desing.md instalalto e dici a CLAUDE CLI di integrarlo
-#ponytail
-INSTALL
-/plugin marketplace add DietrichGebert/ponytail
-/plugin install ponytail@ponytail
-COMMMAND OnDemond:
-  /ponytail ultra
-  /ponytail-review
-  /ponytail-audit  "codice morto flag errati ecc..."
-  /ponytail-debt
-  /ponytail-gain
-  /ponytail off
-
+  #ponytail  >>> Controllo della codebase
+  INSTALL
+  /plugin marketplace add DietrichGebert/ponytail
+  /plugin install ponytail@ponytail
+  COMMMAND OnDemond:
+    /ponytail ultra
+    /ponytail-review
+    /ponytail-audit  "codice morto flag errati ecc..."
+    /ponytail-debt
+    /ponytail-gain
+    /ponytail off
+  #OpenCLI >> Impara ad usare i pulsanti sul browser
+    https://github.com/jackwener/OpenCLI/blob/main/README.md
+  #Variate >> + versioni per landing page per esempio
+    https://github.com/Nutlope/variate
+  #Cerchiamo i problemi per produrre un idea:
+    https://github.com/slavingia/skills/tree/main/skills
+    Sito per ripasso: https://www.youtube.com/watch?v=jyLKRN36-Dc
 
 HOOK:
   Utilizzare gli HOOK sono DETERMINISTICI (li usa sempre) claude.md (può anche non usarlo) NO DETERMINISTICO Esempio: emetti un suono quando hai finito un operazione
