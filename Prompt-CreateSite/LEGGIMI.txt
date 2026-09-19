@@ -52,8 +52,17 @@ PLUGIN:
                               copy -->> Usage: esempio: npx getdesign@latest add clickhouse
                               Nuova sessione claude: @desing.md instalalto e dici a CLAUDE CLI di integrarlo
 #ponytail
+INSTALL
 /plugin marketplace add DietrichGebert/ponytail
 /plugin install ponytail@ponytail
+COMMMAND OnDemond:
+  /ponytail ultra
+  /ponytail-review
+  /ponytail-audit  "codice morto flag errati ecc..."
+  /ponytail-debt
+  /ponytail-gain
+  /ponytail off
+
 
 HOOK:
   Utilizzare gli HOOK sono DETERMINISTICI (li usa sempre) claude.md (può anche non usarlo) NO DETERMINISTICO Esempio: emetti un suono quando hai finito un operazione
