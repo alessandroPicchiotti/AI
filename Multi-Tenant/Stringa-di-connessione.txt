@@ -1,0 +1,66 @@
+;Trusted_Connection=True; MultipleActiveResultSets=true;  >>>>>>>>> Permette di usare + datareaders senza chiderti di chuderlo.
+
+/////////////// Filtering modalità semplice
+modelBuilder.Entity<Order>().HasQueryFilter(o => o.TenantId == _currentTenantService.TenantId);
+
+/////////////// Modalita complessa senza specificarlo per ogni entity
+public interface IMustHaveTenant
+{
+    string TenantId { get; set; }
+}
+
+public interface ICurrentTenantService
+{
+    string TenantId { get; }
+}
+
+public class ApplicationDbContext : DbContext
+{
+    private readonly ICurrentTenantService _currentTenantService;
+
+    public ApplicationDbContext(
+        DbContextOptions<ApplicationDbContext> options,
+        ICurrentTenantService currentTenantService) : base(options)
+    {
+        _currentTenantService = currentTenantService;
+    }
+
+    public DbSet<Order> Orders { get; set; }
+    public DbSet<Product> Products { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        // Applica il filtro a tutte le entità che implementano IMustHaveTenant
+        foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+        {
+            if (typeof(IMustHaveTenant).IsAssignableFrom(entityType.ClrType))
+            {
+                // Definiamo dinamicamente l'espressione Lambda: e => e.TenantId == _currentTenantService.TenantId
+                var parameter = Expression.Parameter(entityType.ClrType, "e");
+                var property = Expression.Property(parameter, nameof(IMustHaveTenant.TenantId));
+                var tenantIdValue = Expression.Constant(_currentTenantService.TenantId);
+                var comparison = Expression.Equal(property, tenantIdValue);
+                var lambda = Expression.Lambda(comparison, parameter);
+
+                modelBuilder.Entity(entityType.ClrType).HasQueryFilter(lambda);
+            }
+        }
+    }
+}
+
+/////////// Come comportarsi con i salvataggi (SaveChanges)
+public override int SaveChanges()
+{
+    foreach (var entry in ChangeTracker.Entries<IMustHaveTenant>())
+    {
+        if (entry.State == EntityState.Added)
+        {
+            entry.Entity.TenantId = _currentTenantService.TenantId;
+        }
+    }
+    return base.SaveChanges();
+}
+
+// Fai lo stesso override asincrono per SaveChangesAsync...
