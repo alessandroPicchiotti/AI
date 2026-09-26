@@ -1,0 +1,1 @@
+Controllora se key sensitive, context è scritto in lowered su claude.md
