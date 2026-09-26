@@ -1,2 +1,5 @@
 
 6 Files di documetnazione per angent enginnering senior
+
+I files sono spiattellati tutti qui ma suk claude per renderli operativi bisogna 
+bisonga aggiungere la cartella /CONTEXT
