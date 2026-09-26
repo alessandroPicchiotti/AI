@@ -64,3 +64,49 @@ public override int SaveChanges()
 }
 
 // Fai lo stesso override asincrono per SaveChangesAsync...
+
+///////////////////1. Attivare il Read Committed Snapshot Isolation (RCSI)
+///////////////////Come accennato in precedenza, questo è il comando fondamentale per impedire che le letture blocchino le scritture (e viceversa), eliminando la necessità di usare NOLOCK.
+
+//////////////////Esegui questo script in SQL Server Management Studio (SSMS):
+
+-- Sostituisci "TuoDatabase" con il nome effettivo del tuo DB
+ALTER DATABASE TuoDatabase SET ALLOW_SNAPSHOT_ISOLATION ON;
+GO
+
+ALTER DATABASE TuoDatabase SET READ_COMMITTED_SNAPSHOT ON;
+GO
+
+
+/////////////////////////////
+3. (Opzionale) Protezione a livello di Database con la Row-Level Security (RLS)
+Se vuoi una sicurezza "di ferro" a prova di errore (nel caso in cui qualcuno dimentichi un IgnoreQueryFilters() nel codice C# o acceda al database direttamente tramite reportistica o strumenti esterni), puoi implementare la Row-Level Security direttamente in SQL Server.
+
+Si compone di due parti: una Funzione di filtro e una Security Policy.
+//////////////////////////////
+
+-- 1. Crea una funzione che legge il Tenant corrente dalla sessione di SQL Server
+CREATE FUNCTION Security.fn_securitypredicate(@TenantId NVARCHAR(50))
+RETURNS TABLE
+WITH SCHEMABINDING
+AS
+    RETURN SELECT 1 AS fn_securitypredicate_result
+    WHERE @TenantId = CAST(SESSION_CONTEXT(N'TenantId') AS NVARCHAR(50))
+    -- Oppure confrontandolo con uno user di database mappato
+    -- WHERE @TenantId = CURRENT_USER; 
+GO
+
+-- 2. Applica la policy sulla tabella Orders
+CREATE SECURITY POLICY TenantSecurityPolicy
+ADD FILTER PREDICATE Security.fn_securitypredicate(TenantId) ON dbo.Orders,
+ADD BLOCK PREDICATE Security.fn_securitypredicate(TenantId) ON dbo.Orders
+WITH (STATE = ON);
+
+
+Come si usa dall'applicazione (.NET): Prima di eseguire qualsiasi query o comando sul database, apri la connessione e imposti il contesto di sessione:
+
+SQL
+EXEC sp_set_session_context @key=N'TenantId', @value=N'Tenant_A';
+A quel punto, anche se un hacker o un bug scrivessero una query senza filtri (SELECT * FROM Orders), SQL Server restituirà solamente i record del Tenant_A filtrandoli a monte nel motore relazionale.
+
+
