@@ -1,0 +1,65 @@
+1.	Cambiare modello costa di più  ogni modello ha la sua cache
+2.	Gioca con Effort
+3.	Scrivere i prompt opus 5.5
+	Creami una pagina dove i clienti prenotano un appuntamento nel mio studio.
+	Finito significa: scelgo giorno e ora, arriva una email di conferma,
+	e due persone non possono prenotare lo stesso orario.
+	Provala tu prima di dirmi che funziona.
+	Fermati a chiedermi solo se ti manca un'informazione.
+	Niente sfondo crema, niente pulsanti a pillola.
+	
+	Domanda facile: /effort low
+
+	Poi rimetti l'effort di prima
+
+	"Finito significa ... "
+
+	"Fermati e chiedimi quando ... "
+
+	"Niente ... ": cosa non vuoi
+	
+4.	claude.md piccolo -> per ridurlo non la @ ma /docs/piopo.md (la chiocciola inlude automaticamente nel contesto)
+	MO -> @docs/prezzi.md
+	lo carica sempre, a ogni avvio
+
+	docs/prezzi.md
+	lo apre solo quando gli serve
+
+	Risparmi contesto
+
+5.  Plan mode (non si usa + )
+	> Creami una pagina dove i clienti prenotano un appuntamento nel mio studio.
+	Tieni una checklist in TASKS.md. Spunta ogni punto quando è fatto e
+	aggiungi quello che scopri strada facendo.
+
+	TASKS. md
+
+	Pagina di prenotazione
+	Email di conferma
+	Niente doppie prenotazioni
+
+	non si perde niente
+
+6.	Skill.md (serie di operazioni) ora li sanno fare da soli
+
+	> /claude-api prompt-audit   (controlla se skill da eliminare o abreviare)
+	
+		skills/report/SKILL.md: procedura passo passo che Claude sa già
+		fare. Tieni solo le correzioni.
+	> valuta la mia skill report con e senza skill
+
+7.	/GOAL (a voltedice che ha finito anche se non è vero)
+
+8.	/Fork (ramo con la chat fatta)
+
+9.	/advisor -> uso sonnet chiede aiuto a opus
+
+10.	> claude --cloud //// giramanda la sessione sul clud  tu puoi spegnere il pc 
+	> claude --teleport Sesion_01 ////la riporta nel client
+	
+11.	Dynamic workflow  (decidere il numero dei agenti) 
+		Le 4 Architetture
+						a.  Catena
+						b.  fan-out
+						c.	Verifica
+						d.	loop
