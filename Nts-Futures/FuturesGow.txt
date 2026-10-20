@@ -36,6 +36,7 @@ Velocità su task specifici:
 
 ----Vue.js-----?!?!?!? progressive framework
 ----Alpine.js--?!?!?!??!
+AngleSharp: il parser HTML moderno per .NET
 
 SKILLS: Gow\.claude\commands
   ---------------------migrating-aspnet-framework-to-core.md
